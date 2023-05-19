@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">>
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить пользователя</title>
+</head>
+<body>
+<form th:method="post" th:action="@{/new_user}" th:object="${user}">
+    <label for="name">name</label>
+    <input name="name" type="text" id="name" th:value="${user.getName()}"/>
+
+    <br>
+    <label for="lastName">lastName</label>
+    <input name="lastName" type="text" id="lastName" th:value="${user.getLastName()}"/>
+
+    <br>
+    <label for="email">email</label>
+    <input name="email" type="text" id="email" th:value="${user.getEmail()}"/>
+
+    <input th:action="@{/}" type="submit" value="Add User"/>
+</form>
+</body>
+</html>

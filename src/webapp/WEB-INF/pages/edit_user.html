@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменить User</title>
+</head>
+<body>
+<form th:action="@{/edit}" th:object="${user}" method="post">
+    <input type="hidden" name="id" th:value="${user.getId()}">
+    <p>User data</p>
+    <p>
+        <label th:for="name">Name</label>
+        <label>
+            <input type="text" name="name" th:id="name" th:value="${user.getName()}">
+        </label>
+        <br/>
+    </p>
+    <p>
+        <label th:for="lastName">Last Name</label>
+        <label>
+            <input type="text" name="lastName" th:id="lastName" th:value="${user.getLastName()}">
+        </label>
+        <br/>
+    </p>
+    <p>
+        <label th:for="email">Email</label>
+        <label>
+            <input type="text" name="email" th:id="email" th:value="${user.getEmail()}">
+        </label>
+        <br/>
+    </p>
+
+    <button type="submit">Change Data</button>
+</form>
+</body>
+</html>
